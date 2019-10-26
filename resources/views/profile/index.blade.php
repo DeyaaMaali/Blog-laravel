@@ -6,7 +6,7 @@
 
 
 @section('posts')
-    <h1>{{$user->name}} Dashbord!</h1>
+    <h1 class="text-center">{{$user->name}} Dashbord!</h1>
     <div class="container" style="margin-top: 60px">
         @foreach($allPosts as $post)
             <div class="card bg-light mb-3" style="width: 95%; border: 1px solid black; margin-bottom: 30px;display: block">
