@@ -14,11 +14,11 @@
                     <form method="post" action="{{route('delete',$post->id)}}" style="float: right">
                         @csrf
                         @method('delete')
-                        <input type="submit" name="delete" value="Delete!">
+                        <button class="btn btn-link" type="submit" name="delete" value="Delete!"><i class="fas fa-trash-alt"></i></button>
                     </form>
                     <form method="GET" action="{{route('edit',$post->id)}}" style="float: right">
                         @csrf
-                        <input type="submit" name="edit" value="Edit!">
+                        <button class="btn btn-link" type="submit" name="edit" value="Edit!"> <i class="fas fa-pencil-alt"></i> </button>
                     </form>
                 @endif
                 <div class="card-header" ><h4>Title: {{$post->title}}</h4></div>
@@ -28,8 +28,8 @@
                 @if($user)
                     <form action="{{route('add_comment',$post->id)}}" method="POST">
                         @csrf
-                        <input type="text" name="comment"placeholder="Comment">
-                        <input type="submit" name="comment_submit" value="Add Comment">
+                        <input type="text"  class="form-control" name="comment"placeholder="Comment" style="width: 80%; display: inline;">
+                        <input class="btn btn-primary" type="submit" name="comment_submit" value="Add Comment" style="width:18%; max-width:150px">
                     </form>
                 @endif
                 <div style="float: right"><a href="{{route('get_comments', $post->id)}}">view all comments</a></div>

@@ -9,7 +9,7 @@
     <h5 class="card-title">Author: {{$post->user->name}}</h5>
     <p class="card-text">{{$post->body}}</p>
 {{--    <h1>{{$comments}}</h1>--}}
-    <div style="width: 95%; border: 1px solid black; margin-bottom: 30px;">
+    <div style="width: 95%; border: 1px solid black; margin-bottom: 30px; padding: 20px">
         @if($comments!="[]")
         <ul>
         @foreach($comments as $comment)
@@ -23,8 +23,8 @@
         @endif
         <form action="{{route('add_comment',$post->id)}}" method="POST">
             @csrf
-            <input type="text" name="comment"placeholder="Comment" style="width: 88%">
-            <input type="submit" name="comment_submit" value="Add Comment">
+            <input class="form-control" type="text" name="comment"placeholder="Comment" style="width: 85%; display:inline; margin-top: 15px">
+            <input class="btn btn-primary" type="submit" name="comment_submit" value="Add Comment">
         </form>
     </div>
     </div>
